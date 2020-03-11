@@ -15,11 +15,13 @@ class ViewPagerAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) 
     private val mFragmentTitleList=ArrayList<String>()
 
     override fun getItem(position: Int): Fragment {
-        return when(position){
-            0 -> HomeFragment()
-            2 -> SourceFragment()
-            else -> 
-        }
+//        return when(position){
+//            0 -> HomeFragment()
+//            2 -> SourceFragment()
+//            else ->
+//
+//        }
+        return HomeFragment()
     }
 
 
