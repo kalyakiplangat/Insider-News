@@ -5,7 +5,6 @@ package com.example.insidernews.network
  */
 class Urls {
     companion object{
-        val localUrl = ""
-        val baseUrl = "https://newsapi.org/v2/"
+        const val baseUrl = "https://newsapi.org/v2/"
     }
 }

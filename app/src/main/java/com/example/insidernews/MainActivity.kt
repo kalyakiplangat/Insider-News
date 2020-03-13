@@ -1,23 +1,33 @@
 package com.example.insidernews
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.viewpager.widget.ViewPager
+import com.example.insidernews.adapters.ViewPagerAdapter
+import com.example.insidernews.views.source.SourceFragment
+import com.example.insidernews.views.home.HomeFragment
+import com.google.android.material.tabs.TabLayout
 
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var tableLayout: TabLayout? = null
+    var viewPager: ViewPager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar : androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        viewPager = findViewById(R.id.viewPager) as ViewPager
+        setupViewPager(viewPager!!)
+        tableLayout = findViewById(R.id.tabs) as TabLayout
+        tableLayout!!.setupWithViewPager(viewPager)
+
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar,
@@ -27,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+    }
+
+    private fun setupViewPager(viewPager: ViewPager) {
+        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        viewPagerAdapter.addFragment(HomeFragment(), "Articles")
+        viewPagerAdapter.addFragment(SourceFragment(), "Source")
+        viewPager!!.adapter = viewPagerAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

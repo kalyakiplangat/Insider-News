@@ -20,7 +20,14 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_drawer_header"
-        app:menu="@menu/nav_drawer_item"/>
+        app:menu="@menu/nav_drawer_item">
+    </com.google.android.material.navigation.NavigationView>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
