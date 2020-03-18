@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar : androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        viewPager = findViewById(R.id.viewPager) as ViewPager
+        viewPager = findViewById(R.id.viewpager) as ViewPager
         setupViewPager(viewPager!!)
         tableLayout = findViewById(R.id.tabs) as TabLayout
         tableLayout!!.setupWithViewPager(viewPager)

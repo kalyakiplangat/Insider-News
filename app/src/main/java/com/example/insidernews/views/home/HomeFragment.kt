@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                {articles->handleResponse(articles.articles)},
+                {articles-> handleResponse(articles.articles)},
                 this::onError))
     }
 
