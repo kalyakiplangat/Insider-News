@@ -1,16 +1,15 @@
 package com.example.insidernews
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.insidernews.adapters.ViewPagerAdapter
-import com.example.insidernews.views.source.SourceFragment
 import com.example.insidernews.views.home.HomeFragment
+import com.example.insidernews.views.source.SourceFragment
 import com.google.android.material.tabs.TabLayout
-
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

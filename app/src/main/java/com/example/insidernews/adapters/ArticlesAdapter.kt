@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -13,6 +14,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.insidernews.R
 import com.example.insidernews.data.Articles
+import com.example.insidernews.databinding.ListArticlesBinding
 import kotlinx.android.synthetic.main.list_articles.view.*
 
 /**
@@ -22,48 +24,22 @@ class ArticlesAdapter(var context: Context, private val articlesList: ArrayList<
     RecyclerView.Adapter<ArticlesAdapter.ArticlesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticlesViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.list_articles, parent, false)
-        return ArticlesViewHolder(view)
+        val inflater = LayoutInflater.from(context)
+        val binding = ListArticlesBinding.inflate(inflater)
+        return ArticlesViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return articlesList.size
-    }
+    override fun getItemCount() = articlesList.size
 
     override fun onBindViewHolder(holder: ArticlesViewHolder, position: Int) {
-        holder.bind(context, articlesList[position], position)
+        val article = articlesList[position]
+        holder.bind(article)
     }
 
-    class ArticlesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(context: Context, articles: Articles, position: Int) {
-            Glide.with(context)
-                .load(articles.urlToImage)
-                .listener(object : RequestListener<Drawable> {
-                    override fun onLoadFailed(
-                        e: GlideException?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        return false
-                    }
-
-                    override fun onResourceReady(
-                        resource: Drawable?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        dataSource: DataSource?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        return false
-                    }
-
-                })
-                .into(itemView.imageView)
-            itemView.headline_text.text = articles.title
-            itemView.description_text.text = articles.description
-            itemView.source_text.text = articles.source.name
-            itemView.author_text.text = articles.author
+    class ArticlesViewHolder(private var binding: ListArticlesBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(articles: Articles) {
+            binding.article = articles
+            binding.executePendingBindings()
         }
     }
 
