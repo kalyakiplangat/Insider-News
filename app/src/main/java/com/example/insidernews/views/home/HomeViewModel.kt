@@ -21,6 +21,8 @@ class HomeViewModel: ViewModel() {
 
     private val status = MutableLiveData<GeneralResponse>()
 
+    var articles = MutableLiveData<List<Articles>>()
+
     private var disposable = CompositeDisposable()
 
     init {
@@ -34,6 +36,7 @@ class HomeViewModel: ViewModel() {
             .subscribe(
                 { result ->
                     status.value = GeneralResponse.SUCCESS
+                    articles.value = result.articles
                 },
                 {
                     this::onError
@@ -41,12 +44,6 @@ class HomeViewModel: ViewModel() {
                 }
                 )
         )
-    }
-
-    private fun handleResponse(articles: List<Articles>) {
-//        articleList = ArrayList(articles)
-//        articlesAdapter = ArticlesAdapter(this.context!!, articleList)
-
     }
 
     private fun onError(e: Throwable){

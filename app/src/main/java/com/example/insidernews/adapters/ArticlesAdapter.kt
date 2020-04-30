@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.list_articles.view.*
 /**
  * Created by Enock on 2/24/20.
  */
-class ArticlesAdapter(var context: Context, private val articlesList: ArrayList<Articles>) :
+class ArticlesAdapter(var context: Context, private val articlesList: List<Articles>) :
     RecyclerView.Adapter<ArticlesAdapter.ArticlesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticlesViewHolder {
