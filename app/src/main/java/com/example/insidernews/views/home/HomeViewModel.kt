@@ -1,6 +1,8 @@
 package com.example.insidernews.views.home
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.insidernews.GeneralResponse
 import com.example.insidernews.adapters.ArticlesAdapter
 import com.example.insidernews.data.Articles
 import com.example.insidernews.network.ApiClient
@@ -16,8 +18,9 @@ class HomeViewModel: ViewModel() {
     private val client by lazy {
         ApiClient.getClient()
     }
-    private lateinit var articlesAdapter: ArticlesAdapter
-    private lateinit var articleList: List<Articles>
+
+    private val status = MutableLiveData<GeneralResponse>()
+
     private var disposable = CompositeDisposable()
 
     init {
@@ -29,11 +32,17 @@ class HomeViewModel: ViewModel() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                {articles->
-                    handleResponse(articles.articles)
+                { result ->
+                    status.value = GeneralResponse.SUCCESS
                 },
-                this::onError))
+                {
+                    this::onError
+                    status.value = GeneralResponse.ERROR
+                }
+                )
+        )
     }
+
     private fun handleResponse(articles: List<Articles>) {
 //        articleList = ArrayList(articles)
 //        articlesAdapter = ArticlesAdapter(this.context!!, articleList)
