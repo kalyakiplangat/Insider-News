@@ -11,9 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.insidernews.R
 import com.example.insidernews.adapters.ArticlesAdapter
-import com.example.insidernews.data.Articles
 import com.example.insidernews.databinding.FragmentHomeBinding
-import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
