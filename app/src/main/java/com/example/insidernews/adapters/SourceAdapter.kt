@@ -26,7 +26,7 @@ class SourceAdapter(val context: Context, private val categoryList: List<Categor
         holder.bind(categories)
     }
 
-    class SourceViewHolder(val binding: SourceCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
+    class SourceViewHolder(private val binding: SourceCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(category: Category){
             binding.category = category
             binding.executePendingBindings()
