@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.insidernews.R
+import com.example.insidernews.adapters.SourceAdapter
 import com.example.insidernews.databinding.FragmentSourceBinding
 /**
  * A simple [Fragment] subclass.
@@ -29,6 +31,9 @@ class SourceFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
+        viewModel.categoryList.observe(this, Observer {
+            binding.recyclerView.adapter = SourceAdapter(this.context!!, it)
+        })
         return binding.root
     }
 }

@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers
  */
 class SourceViewModel : ViewModel() {
     private val response = MutableLiveData<GeneralResponse>()
-    private var categoryList = MutableLiveData<List<Category>>()
+    var categoryList = MutableLiveData<List<Category>>()
     private val disposable = CompositeDisposable()
 
     private val client by lazy {

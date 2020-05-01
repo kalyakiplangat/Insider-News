@@ -7,28 +7,29 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.insidernews.R
 import com.example.insidernews.data.Category
+import com.example.insidernews.databinding.SourceCategoryBinding
 import kotlinx.android.synthetic.main.source_category.view.*
 
-class SourceAdapter(val context: Context, private val categoryList: ArrayList<Category>) :
+class SourceAdapter(val context: Context, private val categoryList: List<Category>) :
     RecyclerView.Adapter<SourceAdapter.SourceViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SourceViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.source_category, parent, false)
-        return SourceViewHolder(view)
+        val inflater = LayoutInflater.from(context)
+        val binding = SourceCategoryBinding.inflate(inflater)
+        return SourceViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return categoryList.size
-    }
+    override fun getItemCount() = categoryList.size
 
     override fun onBindViewHolder(holder: SourceViewHolder, position: Int) {
-        holder.bind(context, categoryList[position], position )
+       val categories = categoryList[position]
+        holder.bind(categories)
     }
 
-    class SourceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(context: Context, category: Category, position: Int){
-            itemView.source_text.text = category.category
-            itemView.description_text.text = category.description
-            itemView.category_text.text = category.name
+    class SourceViewHolder(val binding: SourceCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(category: Category){
+            binding.category = category
+            binding.executePendingBindings()
         }
     }
 
