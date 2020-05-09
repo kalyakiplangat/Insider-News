@@ -3,6 +3,8 @@ package com.example.insidernews.utils
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.insidernews.R
 
 /**
  * Created by cheruiyot
@@ -12,5 +14,8 @@ import com.bumptech.glide.Glide
 fun setImageUrl(imageView: ImageView, imgUrl: String){
     Glide.with(imageView.context)
         .load(imgUrl)
+        .apply(RequestOptions()
+            .placeholder(R.drawable.loading_animation)
+            .error(R.drawable.ic_broken_image))
         .into(imageView)
 }

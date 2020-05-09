@@ -38,14 +38,6 @@
                     android:layout_alignBottom="@+id/imageView"
                     android:layout_marginBottom="1dp"
                     android:src="@drawable/bottom_shadow" />
-
-                <ProgressBar
-                    android:id="@+id/progress_load_photo"
-                    style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp" />
-
                 <TextView
                     android:id="@+id/author_text"
                     android:layout_width="match_parent"
@@ -148,7 +140,6 @@
                     tools:text="Source" />
 
             </RelativeLayout>
-
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 </layout>

@@ -14,13 +14,17 @@ import io.reactivex.schedulers.Schedulers
  * Created by cheruiyot
  * On 27,April,2020
  */
-class HomeViewModel: ViewModel() {
+class HomeViewModel : ViewModel() {
     private val client by lazy {
         ApiClient.getClient()
     }
 
     private val status = MutableLiveData<GeneralResponse>()
     var articles = MutableLiveData<List<Articles>>()
+
+    val navigateToArticle = MutableLiveData<Articles>()
+
+
     private var disposable = CompositeDisposable()
 
     init {
@@ -40,12 +44,12 @@ class HomeViewModel: ViewModel() {
                     this::onError
                     status.value = GeneralResponse.ERROR
                 }
-                )
+            )
         )
     }
 
 
-    private fun onError(e: Throwable){
+    private fun onError(e: Throwable) {
         e.printStackTrace()
     }
 
