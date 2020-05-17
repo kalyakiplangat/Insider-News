@@ -16,7 +16,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.adView
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     private var tableLayout: TabLayout? = null
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         MobileAds.initialize(this){}
         val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+        
 
     }
 

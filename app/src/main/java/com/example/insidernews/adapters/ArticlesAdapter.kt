@@ -35,6 +35,8 @@ class ArticlesAdapter(
             val article = articlesList[position]
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("url", article.url)
+            intent.putExtra("image", article.urlToImage)
+            intent.putExtra("title", article.title)
             context.startActivity(intent)
         }
     }
