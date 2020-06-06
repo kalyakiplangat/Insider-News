@@ -16,7 +16,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-1929314259869865~8848154975"/>
         <activity
-            android:name=".views.detailsnews.DetailActivity"
+            android:name=".ui.detailsnews.DetailActivity"
             android:label="Detail News">
 
         </activity>

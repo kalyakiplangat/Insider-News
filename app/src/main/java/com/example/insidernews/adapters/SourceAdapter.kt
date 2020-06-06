@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.insidernews.data.Category
 import com.example.insidernews.databinding.SourceCategoryBinding
-import com.example.insidernews.views.detailsnews.DetailActivity
+import com.example.insidernews.ui.detailsnews.DetailActivity
 
 class SourceAdapter(val context: Context, private val categoryList: List<Category>) :
     RecyclerView.Adapter<SourceAdapter.SourceViewHolder>() {

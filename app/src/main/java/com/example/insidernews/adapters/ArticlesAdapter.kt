@@ -4,12 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.insidernews.MainActivity
 import com.example.insidernews.data.Articles
 import com.example.insidernews.databinding.ListArticlesBinding
-import com.example.insidernews.views.detailsnews.DetailActivity
+import com.example.insidernews.ui.detailsnews.DetailActivity
 
 /**
  * Created by Enock on 2/24/20.

@@ -1,4 +1,4 @@
-package com.example.insidernews.views.home
+package com.example.insidernews.ui.home
 
 
 import android.os.Bundle
@@ -12,14 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.insidernews.R
 import com.example.insidernews.adapters.ArticlesAdapter
 import com.example.insidernews.databinding.FragmentHomeBinding
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.activity_detail.adView
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.list_articles.*
 
 /**
  * A simple [Fragment] subclass.

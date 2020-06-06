@@ -1,4 +1,4 @@
-package com.example.insidernews.views.source
+package com.example.insidernews.ui.source
 
 
 import android.os.Bundle

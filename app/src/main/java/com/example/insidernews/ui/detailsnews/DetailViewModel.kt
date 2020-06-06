@@ -1,4 +1,4 @@
-package com.example.insidernews.views.detailsnews
+package com.example.insidernews.ui.detailsnews
 
 import androidx.lifecycle.ViewModel
 

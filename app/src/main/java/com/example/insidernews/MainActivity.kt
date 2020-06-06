@@ -7,16 +7,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.insidernews.adapters.ViewPagerAdapter
-import com.example.insidernews.views.home.HomeFragment
-import com.example.insidernews.views.source.SourceFragment
+import com.example.insidernews.ui.home.HomeFragment
+import com.example.insidernews.ui.source.SourceFragment
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_detail.adView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     private var tableLayout: TabLayout? = null
@@ -44,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         MobileAds.initialize(this){}
         val adRequest = AdRequest.Builder().build()
-        
+        adView.loadAd(adRequest)
 
     }
 

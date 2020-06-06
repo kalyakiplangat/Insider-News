@@ -1,4 +1,4 @@
-package com.example.insidernews.views.home
+package com.example.insidernews.ui.home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

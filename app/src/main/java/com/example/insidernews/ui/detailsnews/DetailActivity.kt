@@ -1,19 +1,14 @@
-package com.example.insidernews.views.detailsnews
+package com.example.insidernews.ui.detailsnews
 
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.bumptech.glide.request.RequestOptions
 import com.example.insidernews.R
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {

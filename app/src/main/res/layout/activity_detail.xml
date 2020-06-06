@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.detailsnews.DetailActivity">
+        tools:context=".ui.detailsnews.DetailActivity">
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyle"
@@ -34,7 +34,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             ads:adSize="SMART_BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+            ads:adUnitId="ca-app-pub-1929314259869865/9586521572">
 
         </com.google.android.gms.ads.AdView>
     </RelativeLayout>
