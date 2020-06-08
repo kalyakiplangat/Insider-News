@@ -7,7 +7,7 @@
 
         <variable
             name="category"
-            type="com.example.insidernews.data.Category" />
+            type="com.thekalya.insidernews.data.Category" />
     </data>
 
     <FrameLayout

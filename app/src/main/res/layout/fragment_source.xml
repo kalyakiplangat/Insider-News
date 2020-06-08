@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.insidernews.ui.source.SourceViewModel" />
+            type="com.thekalya.insidernews.ui.source.SourceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

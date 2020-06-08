@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.insidernews">
+    package="com.thekalya.insidernews">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,12 +16,12 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-1929314259869865~8848154975"/>
         <activity
-            android:name=".ui.detailsnews.DetailActivity"
+            android:name="com.thekalya.insidernews.ui.detailsnews.DetailActivity"
             android:label="Detail News">
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.thekalya.insidernews.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

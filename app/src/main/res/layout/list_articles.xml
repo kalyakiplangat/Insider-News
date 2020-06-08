@@ -5,7 +5,7 @@
     <data>
         <variable
             name="article"
-            type="com.example.insidernews.data.Articles" />
+            type="com.thekalya.insidernews.data.Articles" />
     </data>
 
     <FrameLayout
